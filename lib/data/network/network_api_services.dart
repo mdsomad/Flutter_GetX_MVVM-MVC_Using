@@ -1,24 +1,3 @@
-# flutter_getx_mvvm_mvc
-
-A new Flutter project.
-- 1: Network Services Api
-
-
-
-- 1: TODO Create abstract class BaseApiServices
-```sh
-abstract class BaseApiServices {
-  Future<dynamic> getApi(String url);
-  Future<dynamic> postApi(dynamic data, String url);
-}
-```
-
-
-
-
-
-- 2: TODO Create NetworkApiServices class     ( inherit this --> BaseApiServices class)
-```sh
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
@@ -31,7 +10,7 @@ import 'package:http/http.dart' as http;
 
 
 
-
+//TODO Create NetworkApiServices class     ( inherit this --> BaseApiServices class)
 class NetworkApiServices extends BaseApiServices{
 
 
@@ -121,5 +100,3 @@ class NetworkApiServices extends BaseApiServices{
   
 
 }
-
-```
