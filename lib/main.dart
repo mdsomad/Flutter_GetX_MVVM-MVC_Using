@@ -13,13 +13,13 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       title: 'Flutter GetX MVVM/MVC',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
-      getPages: AppRoutes.appRoutes(),
+      // getPages: AppRoutes.appRoutes(),
     );
   }
 }

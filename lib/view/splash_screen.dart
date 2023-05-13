@@ -12,6 +12,14 @@ class SplashScreen extends StatefulWidget {
 class SsplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Container(
+        child: Center(
+          child: Text(
+            "Splash Screen",style: TextStyle(color: Colors.pink,fontSize:40),
+          ),
+        ),
+      ),
+    );
   }
 }
