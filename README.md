@@ -25,7 +25,7 @@ A new Flutter project.
 <tr>
 
 <td>
-  <img src=" " alt="Splash Screen View Example" width="260"/>
+  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/6e7a00c1-d2f8-47ea-8f57-f0a6d1925aeb" alt="Splash Screen View Example" width="260"/>
 </td>
 
 
@@ -33,7 +33,6 @@ A new Flutter project.
 </tr>
 
 </table>
-
 
 
 
