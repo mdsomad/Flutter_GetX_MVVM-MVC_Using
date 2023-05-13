@@ -11,11 +11,15 @@ class Languages extends Translations{
    Map<String,Map<String,String>> get keys =>{
   
     'en_Us':{                                    //* <-- Add multiple languages
-      "splash_screen":"Splash Screen"
+      "splash_screen":"Splash Screen",
+      'internet_exception' : "We're unable tp show results.\nPtease check your\ninternet conenction.",
+      'general_exception': "We're unable to process your request.\n Please try again"
     },
 
     'hi_IN':{
       "splash_screen":"स्प्लैश स्क्रीन",
+      'internet_exception' : "हम परिणाम दिखाने में असमर्थ हैं।\nकृपया अपनी जाँच करें\nइंटरनेट कनेक्शन.",
+      'general_exception': "हम आपके अनुरोध को संसाधित करने में असमर्थ हैं।\n कृपया पुन: प्रयास करें"
     }
     
      

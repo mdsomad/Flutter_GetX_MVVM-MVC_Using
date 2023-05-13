@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       translations: Languages(),          //* Languages This class
-      locale: Locale('hi','IN'),          //* <-- Save Value assign this (shared preference use kare to)
+      locale: Locale('en','US'),          //* <-- Save Value assign this (shared preference use kare to)
       fallbackLocale: Locale('en','US'),  //* Add This Code
       
       debugShowCheckedModeBanner: false,
