@@ -103,15 +103,22 @@ class SsplashScreenState extends State<SplashScreen> {
 
 
 
+```sh
+
+```
 
 
 
-### GetX Hindi Language Ui Preview
+
+
+
+
+
+## GetX Hindi Language Ui Preview
  <img src="" alt="App Language English View Example" width="260"/>
-- 2: TODO GetMaterialApp set this code (Hindi Languages set)
+- 3: TODO GetMaterialApp set this code (Hindi Languages set)
 ```sh
   GetMaterialApp(
-
       translations: Languages(),          //* Add This Code  ( Languages This cla)
       locale: Locale('hi','IN'),          //* <-- Save Value assign this (shared preference use kare to)
       fallbackLocale: Locale('en','US'),  //* Add This Code
@@ -127,6 +134,8 @@ class SsplashScreenState extends State<SplashScreen> {
     );
 
 ```
+
+
 
 
 
