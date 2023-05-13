@@ -1,71 +1,58 @@
 # flutter_getx_mvvm_mvc
 
-- [Supported languages country codes website link Click Now](https://api.flutter.dev/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+<!-- - [Supported languages country codes website link Click Now](https://api.flutter.dev/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html) -->
 
 
 A new Flutter project.
-- 1: App Strings & GetX Localization Languages Supported code
+- 1: Use Fonts & Images
 
 
 
-- 1: TODO Create Languages class
-```sh
-import 'package:get/get.dart';
 
-class Languages extends Translations{
 
-  //TODO Map
-  @override
-   Map<String,Map<String,String>> get keys =>{
+## Image || Fonts Use Ui Preview
+
+
+<table>
   
-    'en_Us':{                                    //* <-- Add multiple languages
-      "splash_screen":"Splash Screen"
-    },
+  
+<tr>                    
+   <th>Splash Screen View</th>
+</tr>  
+  
+  
+  
+<tr>
 
-    'hi_IN':{
-      "splash_screen":"स्प्लैश स्क्रीन",
-    }
-    
-     
-   };
-
-}
-```
-
+<td>
+  <img src=" " alt="Splash Screen View Example" width="260"/>
+</td>
 
 
+  
+</tr>
+
+</table>
 
 
-- 2: TODO Create SplashScreen
+
+
+
+
+
+
+
+First, create Assets Folder then create image folder then create Fonts folder then create icons folder then add images || fonts || iconsimages 
+
+
+- 1: TODO Create ImageAssets class   (Using This code)
 ```sh
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
+class ImageAssets{
 
-
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => SsplashScreenState();
-}
-
-class SsplashScreenState extends State<SplashScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text(
-
-            // Languages add code
-            'splash_screen'.tr,style: TextStyle(color: Colors.pink,fontSize:40),
-
-          ),
-        ),
-      ),
-    );
-  }
+  static const String splashScreen = "assets/images/cart.jpg";
+  static const String messageIcon = "assets/icons/message.svg";
+  
 }
 
 ```
@@ -74,27 +61,12 @@ class SsplashScreenState extends State<SplashScreen> {
 
 
 
-
-## GetX English & Hindi Language Ui Preview
- <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/28444579-eeee-4488-9bb6-b648b1e26048" alt="App Language English View Example" width="260"/>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/c6b6fde4-37ac-405d-a7f7-d4b0dbd25ad2" alt="App Language English View Example" width="260"/>
-- 2: TODO GetMaterialApp set this code (English Languages set)
+- 2: TODO Create AppFonts Class
 ```sh
-  GetMaterialApp(
-
-      translations: Languages(),          //* Add This Code  ( Languages This cla)
-      locale: Locale('en','US'),          //* <-- Save Value assign this (shared preference use kare to)
-      fallbackLocale: Locale('en','US'),  //* Add This Code
-      
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter GetX MVVM/MVC',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SplashScreen(),
-
-
-    );
+class AppFonts {
+  static const String robotBold = "Roboto-Regular";
+  static const String dancingScript = "DancingScript";
+}
 
 ```
 
@@ -102,23 +74,18 @@ class SsplashScreenState extends State<SplashScreen> {
 
 
 
-- 2: TODO GetMaterialApp set this code (Hindi Languages set)
+
+
+
+- 2: pubspec.yaml file configure fonts this code
 ```sh
-  GetMaterialApp(
-
-      translations: Languages(),          //* Add This Code  ( Languages This cla)
-      locale: Locale('hi','IN'),          //* <-- Save Value assign this (shared preference use kare to)
-      fallbackLocale: Locale('en','US'),  //* Add This Code
-      
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter GetX MVVM/MVC',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SplashScreen(),
-
-
-    );
+fonts:
+    - family: DancingScript
+      fonts:
+        - asset: assets/fonts/DancingScript-VariableFont_wght.ttf
+    - family: Roboto-Regular
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
 
 ```
 
