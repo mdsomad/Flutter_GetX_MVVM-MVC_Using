@@ -103,18 +103,12 @@ class SsplashScreenState extends State<SplashScreen> {
 
 
 
-```sh
-
-```
 
 
 
 
 
-
-
-
-## GetX Hindi Language Ui Preview
+<!-- ## GetX Hindi Language Ui Preview
  <img src="" alt="App Language English View Example" width="260"/>
 - 3: TODO GetMaterialApp set this code (Hindi Languages set)
 ```sh
@@ -133,7 +127,7 @@ class SsplashScreenState extends State<SplashScreen> {
 
     );
 
-```
+``` -->
 
 
 
