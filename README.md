@@ -1,7 +1,7 @@
 # flutter_getx_mvvm_mvc
 
 A new Flutter project.
-- 1: Network Services Api
+<!-- - 1: Network Services Api
 
 
 
@@ -122,4 +122,4 @@ class NetworkApiServices extends BaseApiServices{
 
 }
 
-```
+``` -->
