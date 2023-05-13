@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 
@@ -16,7 +17,7 @@ class SsplashScreenState extends State<SplashScreen> {
       body: Container(
         child: Center(
           child: Text(
-            "Splash Screen",style: TextStyle(color: Colors.pink,fontSize:40),
+            'splash_screen'.tr,style: TextStyle(color: Colors.pink,fontSize:40),
           ),
         ),
       ),
