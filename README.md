@@ -75,8 +75,9 @@ class SsplashScreenState extends State<SplashScreen> {
 
 
 
-## GetX English Language Ui Preview
- <img src=" " alt="App Language English View Example" width="260"/>
+## GetX English & Hindi Language Ui Preview
+ <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/28444579-eeee-4488-9bb6-b648b1e26048" alt="App Language English View Example" width="260"/>
+  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/c6b6fde4-37ac-405d-a7f7-d4b0dbd25ad2" alt="App Language English View Example" width="260"/>
 - 2: TODO GetMaterialApp set this code (English Languages set)
 ```sh
   GetMaterialApp(
@@ -101,18 +102,10 @@ class SsplashScreenState extends State<SplashScreen> {
 
 
 
-
-
-
-
-
-
-
-<!-- ## GetX Hindi Language Ui Preview
- <img src="" alt="App Language English View Example" width="260"/>
-- 3: TODO GetMaterialApp set this code (Hindi Languages set)
+- 2: TODO GetMaterialApp set this code (Hindi Languages set)
 ```sh
   GetMaterialApp(
+
       translations: Languages(),          //* Add This Code  ( Languages This cla)
       locale: Locale('hi','IN'),          //* <-- Save Value assign this (shared preference use kare to)
       fallbackLocale: Locale('en','US'),  //* Add This Code
@@ -127,15 +120,7 @@ class SsplashScreenState extends State<SplashScreen> {
 
     );
 
-``` -->
-
-
-
-
-
-
-
-
+```
 
 
 
