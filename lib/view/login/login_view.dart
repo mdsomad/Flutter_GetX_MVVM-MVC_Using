@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc/res/Components/round_button.dart';
 import 'package:flutter_getx_mvvm_mvc/utils/utils.dart';
 import 'package:get/get.dart';
-import '../../view_model/controller/login_view_controller.dart';
+import '../../view_model/controller/login/login_view_controller.dart';
 
 
 

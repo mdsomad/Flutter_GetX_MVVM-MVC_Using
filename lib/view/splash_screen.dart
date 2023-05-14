@@ -20,12 +20,12 @@ class SplashScreen extends StatefulWidget {
 
 class SsplashScreenState extends State<SplashScreen> {
 
-SplashServices splashServices = SplashServices();
+SplashServices splashServices = SplashServices();   //* <-- This SplashServices class Create Instance &  Object
 
 @override
   void initState() {
     // TODO: implement initState
-    splashServices.isLogin();  //* <-- Call This isLogin()  Function
+    splashServices.isLogin();  //* <-- Call This isLogin() Function
     super.initState();
   }
   
