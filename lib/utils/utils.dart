@@ -30,11 +30,33 @@ class Utils {
 
 
 
-
   //TODO sanckBar function
  static sanckBar(String title, String message){
-    Get.snackbar(title, message);
+    Get.snackbar(title, message,
+    colorText: Colors.black,
+    backgroundColor: Colors.green
+    );
  }
+
+
+
+
+
+
+  //TODO sanckBarError function
+ static sanckBarError(String title, String message){
+    Get.snackbar(title, message,
+    colorText: Colors.white,
+    icon: Icon(Icons.error,color: Colors.white,),
+    backgroundColor: Colors.red
+    );
+ }
+
+
+
+
+
+
 
   
   

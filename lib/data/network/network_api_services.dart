@@ -58,8 +58,8 @@ class NetworkApiServices extends BaseApiServices{
     try {
        final response = await http.post(Uri.parse(url),
 
-          body: jsonEncode(data)    //* <-- Agar row form mein Data Hai To Aise Hi bhejna hai
-         // body: data              //* <-- Agar from-data hai to Aise Hi bhejna hai  
+          // body: jsonEncode(data)    //* <-- Agar row form mein Data Hai To Aise Hi bhejna hai
+          body:data              //* <-- Agar from-data hai to Aise Hi bhejna hai  
                 
        ).timeout( const Duration(seconds: 60));
 
@@ -70,7 +70,10 @@ class NetworkApiServices extends BaseApiServices{
     }on RequestTimeOutException{
       throw RequestTimeOutException('');
     }
-
+    
+    if(kDebugMode){
+      print(responseJson);
+    }
     return responseJson;
     
   }
@@ -88,7 +91,8 @@ class NetworkApiServices extends BaseApiServices{
       dynamic responseJson = jsonDecode(response.body);
       return responseJson;
      case 400:
-      throw InvalidUrlException;
+      dynamic responseJson = jsonDecode(response.body);
+      return responseJson;
      default:
       throw FetchDataException("Error accoured while communicating with server"+response.statusCode.toString());
    }

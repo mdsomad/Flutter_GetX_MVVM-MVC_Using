@@ -110,13 +110,17 @@ class _LoginViewState extends State<LoginView> {
               height: 40,
             ),
 
-           
-            RoundButton(      //* <-- Call RoundButton
+           Obx(() =>  RoundButton(      //* <-- Call RoundButton
                 white: 200,
                 title: 'login'.tr,
+                loading: loginViewController.loading.value,
                 onPress: () {
-                  if (_formkey.currentState!.validate()) {}
+                  if (_formkey.currentState!.validate()) {
+                     loginViewController.loginApi();
+                  }
                 })
+          )
+           
 
 
           ],
