@@ -10,19 +10,15 @@ A new Flutter project.
 
 
 
-## Components Ui Preview
+## SplashScreen & LoginScreen Ui Preview
 
 
 <table>
   
   
 <tr> 
-   <th>Round Button Component View</th>
-   <th>Internet Eexception Component language English View</th>
-   <th>Internet Eexception Component language English View</th>
-   <th>General Eexception Component language English View</th>
-   <th>General Eexception Component language Hindi View</th>
-  
+   <th>Splash Screen View</th>
+   <th>Login Screen View</th>
 </tr>  
   
   
@@ -31,27 +27,13 @@ A new Flutter project.
 
 
 <td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/c015760e-8992-430f-9671-82e0fdad1483" alt="Round Button Component view Example"     width="260"/>
+  <img src=" " alt="Splash Screen view Example" width="260"/>
 </td>
 
 
 <td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/d9f7ba80-b1aa-4164-b996-8c7f95322815" alt="Internet Eexception Component language English view Example" width="260"/>
+  <img src=" " alt="Login Screeni view Example" width="260"/>
 </td>
-<td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/ea0bba13-7e66-4880-90e9-ad7fe5739483" alt="Internet Eexception Component language Hindi view Example" width="260"/>
-</td>
-
-
-
-
-<td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/11ee436c-363c-4f90-8f46-d580cda53ba3" alt="General Eexception Component language English view Example" width="260"/>
-</td>
-<td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/95160410-c102-4055-868c-ee6bf34d754b" alt="General Eexception Component language Hindi view Example" width="260"/>
-</td>
-
 
 
 
@@ -65,90 +47,23 @@ A new Flutter project.
 
 
 
-- 1: Round Button Component code 
+
+
+- 3: TODO Class SplashServices code
 ```sh
-import 'package:flutter/material.dart';
-import 'package:flutter_getx_mvvm_mvc/res/Colors/app_colors.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'dart:async';
+import 'package:flutter_getx_mvvm_mvc/res/Routes/routes.dart';
+import 'package:flutter_getx_mvvm_mvc/res/Routes/routes_name.dart';
+import 'package:flutter_getx_mvvm_mvc/view/login/login_view.dart';
+import 'package:get/get.dart';
 
 
 
-class GeneralEexceptionWidget extends StatefulWidget {
-  final VoidCallback onPress;
-  const GeneralEexceptionWidget({super.key, required this.onPress});
-
-  @override
-  State<GeneralEexceptionWidget> createState() =>
-      _GeneralEexceptionWidgetState();
-}
-
-class _GeneralEexceptionWidgetState extends State<GeneralEexceptionWidget> {
-  @override
-  Widget build(BuildContext context) {
-
-    final height = MediaQuery.of(context).size.height;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-
-          SizedBox(
-            height: height * .15,
-          ),
-
-          Icon(
-            Icons.cloud_off,
-            color: AppColor.redColor,
-            size: 50,
-          ),
-
-
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Center(
-                child: Text(
-              'general_exception'.tr,
-              textAlign: TextAlign.center,
-            )),
-          ),
-
-
-          SizedBox(
-            height: height * .15,
-          ),
-
-
-          InkWell(
-            onTap: widget.onPress,
-            child: Container(
-              height: 44,
-              width: 160,
-              decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(50)),
-              child: Center(
-                  child: Text("Retry",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(color: Colors.white),
-              )),
-            ),
-          )
-
-
-
-
-
-        ],
-      ),
-    );
+class SplashServices {
+  void isLogin() {
+    Timer(Duration(seconds: 3), () => Get.toNamed(RouteName.loginView));
   }
 }
-
 
 ```
 
@@ -159,186 +74,51 @@ class _GeneralEexceptionWidgetState extends State<GeneralEexceptionWidget> {
 
 
 
-- 2: Internet Eexception Component code 
+
+
+- 3: SplashScreens code
 ```sh
-
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_mvvm_mvc/res/Colors/app_colors.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:flutter_getx_mvvm_mvc/res/Components/general_exception.dart';
+import 'package:flutter_getx_mvvm_mvc/res/Components/internet_exceptions_widget.dart';
+import 'package:flutter_getx_mvvm_mvc/res/Components/round_button.dart';
+import 'package:flutter_getx_mvvm_mvc/res/assets/image_asset.dart';
+import 'package:flutter_getx_mvvm_mvc/res/fonts/app_fonts.dart';
+import 'package:flutter_getx_mvvm_mvc/view_model/services/solash_services.dart';
+import 'package:get/get.dart';
 
 
 
 
 
-class InternetEexceptionWidget extends StatefulWidget {
-  final VoidCallback onPress;
-  const InternetEexceptionWidget({super.key, required this.onPress});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<InternetEexceptionWidget> createState() =>
-      _InternetEexceptionWidgetState();
+  State<SplashScreen> createState() => SsplashScreenState();
 }
 
-class _InternetEexceptionWidgetState extends State<InternetEexceptionWidget> {
+class SsplashScreenState extends State<SplashScreen> {
+
+SplashServices splashServices = SplashServices();   // <-- SplashServices calss Object
+
+@override
+  void initState() {
+    // TODO: implement initState
+    splashServices.isLogin();   //* <-- Call This isLogin()  Function
+    super.initState();
+  }
+  
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-
-          SizedBox(
-            height: height * .15,
-          ),
-
-
-          Icon(
-            Icons.cloud_off,
-            color: AppColor.redColor,
-            size: 50,
-          ),
-
-
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Center(
-                child: Text(
-              'internet_exception'.tr,
-              textAlign: TextAlign.center,
-            )),
-          ),
-
-
-          SizedBox(
-            height: height * .15,
-          ),
-
-
-
-
-          InkWell(
-            onTap: widget.onPress,
-            child: Container(
-              height: 44,
-              width: 160,
-              decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(50)),
-              child: Center(
-                  child: Text("Retry",
-                  style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(color: Colors.white),
-              )),
-            ),
-          )
-
-
-
-
-
-        ],
+    return Scaffold(
+     backgroundColor: Colors.teal,
+      body: Center(
+        child: Text('welcome_back'.tr,textAlign: TextAlign.center,),
       ),
     );
   }
 }
-
-
-```
-
-
-
-
-
-- 3: General Etexception Component code
-```sh
-import 'package:flutter/material.dart';
-import 'package:flutter_getx_mvvm_mvc/res/Colors/app_colors.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
-
-
-
-
-class GeneralEexceptionWidget extends StatefulWidget {
-  final VoidCallback onPress;
-  const GeneralEexceptionWidget({super.key, required this.onPress});
-
-  @override
-  State<GeneralEexceptionWidget> createState() =>
-      _GeneralEexceptionWidgetState();
-}
-
-class _GeneralEexceptionWidgetState extends State<GeneralEexceptionWidget> {
-  @override
-  Widget build(BuildContext context) {
-
-    final height = MediaQuery.of(context).size.height;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-
-          SizedBox(
-            height: height * .15,
-          ),
-
-          Icon(
-            Icons.cloud_off,
-            color: AppColor.redColor,
-            size: 50,
-          ),
-
-
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Center(
-                child: Text(
-              'general_exception'.tr,
-              textAlign: TextAlign.center,
-            )),
-          ),
-
-
-          SizedBox(
-            height: height * .15,
-          ),
-
-
-          InkWell(
-            onTap: widget.onPress,
-            child: Container(
-              height: 44,
-              width: 160,
-              decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(50)),
-              child: Center(
-                  child: Text("Retry",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(color: Colors.white),
-              )),
-            ),
-          )
-
-
-
-
-
-        ],
-      ),
-    );
-  }
-}
-
 
 ```
 
@@ -353,24 +133,188 @@ class _GeneralEexceptionWidgetState extends State<GeneralEexceptionWidget> {
 
 
 
-- 4: AppColor class code 
+
+
+
+## Login Screen related codes Stard
+- 1: TODO Create LoginViewController class for login
 ```sh
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class AppColor{
 
-  static const Color blackColor = Color(0xf000000);
-  static const Color whiteColor = Color(0xffffffff);
 
-  static const Color primaryColor = Color(0xff01B1C9);
-  static const Color primaryButtonColor = Color(0xff01B1C9);
-  static const Color secondaryButtonColor = Color(0xffFC3F5B);
-  static const Color redColor = Color(0xffFC3F5B);
-  static const Color primaryTextColor = Color(0xff000000);
-  static const Color secondaryTextColor = Color(0xff444648);
+class LoginViewController extends GetxController{
+
+
+  final emailController = TextEditingController().obs;
+  final passwordController = TextEditingController().obs;
+
+  final emailFocusNode = FocusNode().obs;
+  final passwordFocusNode = FocusNode().obs;
+ 
   
 }
+
+
 ```
+
+
+
+
+
+
+
+
+- 2: LoginView code 
+```sh
+
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter_getx_mvvm_mvc/res/Components/round_button.dart';
+import 'package:flutter_getx_mvvm_mvc/utils/utils.dart';
+import 'package:get/get.dart';
+import '../../view_model/controller/login_view_controller.dart';
+
+
+
+
+
+
+
+
+
+
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
+
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+
+
+  LoginViewController loginViewController = Get.put(LoginViewController());
+  final _formkey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Text('login'.tr),
+      ),
+
+
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+
+            Form(
+              key: _formkey,
+              child: Column(
+                children: [
+
+
+                  TextFormField(
+                    controller: loginViewController.emailController.value,
+                    focusNode: loginViewController.emailFocusNode.value,
+                    decoration: InputDecoration(
+                        hintText: 'email_hint'.tr,
+                        border: OutlineInputBorder()),
+
+
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        Utils.sanckBar("Email", "Enter emai");
+                      }
+                    },
+
+
+                    onFieldSubmitted: (value) {
+                      Utils.fieldFocusChange(
+                          context,
+                          loginViewController.emailFocusNode.value,
+                          loginViewController.passwordFocusNode.value);
+                    },
+                  ),
+
+
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+
+                  TextFormField(
+                    controller: loginViewController.passwordController.value,
+                    focusNode: loginViewController.emailFocusNode.value,
+                    obscureText: true,
+                    obscuringCharacter: "*",
+                    decoration: InputDecoration(
+                        hintText: 'password_hint'.tr,
+                        border: OutlineInputBorder()),
+
+
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        Utils.sanckBar("Password", "Enter password");
+                      }
+                    },
+
+                    onFieldSubmitted: (value) {},
+
+                  ),
+
+
+
+                ],
+              ),
+            ),
+
+
+            const SizedBox(
+              height: 40,
+            ),
+
+           
+            RoundButton(      //* <-- Call RoundButton
+                white: 200,
+                title: 'login'.tr,
+                onPress: () {
+                  if (_formkey.currentState!.validate()) {}
+                })
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -379,30 +323,34 @@ class AppColor{
 ```sh
 import 'package:get/get.dart';
 
-
 class Languages extends Translations{
+
 
   //TODO Map
   @override
-   Map<String,Map<String,String>> get keys =>{
+   Map<String,Map<String,String>> get keys => {
   
     'en_Us':{                                    //* <-- Add multiple languages
       "splash_screen":"Splash Screen",
       'internet_exception' : "We're unable tp show results.\nPtease check your\ninternet conenction.",
-      'general_exception': "We're unable to process your request.\n Please try again"
+      'general_exception': "We're unable to process your request.\n Please try again",
+      'welcome_back':"Welcome\nBack",
+      'login':"Login",
+      'email_hint':"Email",
+      'password_hint':"Password",
     },
 
     'hi_IN':{
       "splash_screen":"स्प्लैश स्क्रीन",
       'internet_exception' : "हम परिणाम दिखाने में असमर्थ हैं।\nकृपया अपनी जाँच करें\nइंटरनेट कनेक्शन.",
-      'general_exception': "हम आपके अनुरोध को संसाधित करने में असमर्थ हैं।\n कृपया पुन: प्रयास करें"
+      'general_exception': "हम आपके अनुरोध को संसाधित करने में असमर्थ हैं।\n कृपया पुन: प्रयास करें",
+      'login':"लॉग इन करें",
+      'email_hint':"ईमेल",
+      'password_hint':"पासवर्ड",
     }
     
      
    };
-
-
-   
 }
 
 ```
