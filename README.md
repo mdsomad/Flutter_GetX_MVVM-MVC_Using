@@ -27,12 +27,12 @@ A new Flutter project.
 
 
 <td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/db145dc0-105d-4e58-b288-fb3e764f0f99" alt="Login Successfully View Example" width="260"/>
+  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/43e02b03-187f-4568-a5db-e789f846aa09" alt="Login Successfully View Example" width="260"/>
 </td>
   
   
 <td>
-  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/6eee41cd-8e95-4b86-8abf-11b770a7a5b0" alt="Home Screen View Example" width="260"/>
+  <img src="https://github.com/mdsomad/Flutter_GetX_MVVM-MVC_Using/assets/103892160/5a891a19-9dbc-47c2-bab8-288bd13eaca9" alt="Home Screen View Example" width="260"/>
 </td>
 
 
@@ -41,6 +41,7 @@ A new Flutter project.
 </tr>
 
 </table>
+
 
 
 
