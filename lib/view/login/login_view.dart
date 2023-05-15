@@ -2,6 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc/res/Components/round_button.dart';
 import 'package:flutter_getx_mvvm_mvc/utils/utils.dart';
+import 'package:flutter_getx_mvvm_mvc/view/login/Widgets/input_email_widget.dart';
+import 'package:flutter_getx_mvvm_mvc/view/login/Widgets/input_password_wigdet.dart';
+import 'package:flutter_getx_mvvm_mvc/view/login/Widgets/login_button_widget.dart';
 import 'package:get/get.dart';
 import '../../view_model/controller/login/login_view_controller.dart';
 
@@ -27,6 +30,12 @@ class _LoginViewState extends State<LoginView> {
   LoginViewController loginViewController = Get.put(LoginViewController());
   final _formkey = GlobalKey<FormState>();
 
+
+
+
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,28 +59,7 @@ class _LoginViewState extends State<LoginView> {
                 children: [
 
 
-                  TextFormField(
-                    controller: loginViewController.emailController.value,
-                    focusNode: loginViewController.emailFocusNode.value,
-                    decoration: InputDecoration(
-                        hintText: 'email_hint'.tr,
-                        border: OutlineInputBorder()),
-
-
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        Utils.sanckBar("Email", "Enter emai");
-                      }
-                    },
-
-
-                    onFieldSubmitted: (value) {
-                      Utils.fieldFocusChange(
-                          context,
-                          loginViewController.emailFocusNode.value,
-                          loginViewController.passwordFocusNode.value);
-                    },
-                  ),
+                 InputEmailWidget(),   //* <-- Call This InputEmailWidget
 
 
                   const SizedBox(
@@ -79,25 +67,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
 
 
-                  TextFormField(
-                    controller: loginViewController.passwordController.value,
-                    focusNode: loginViewController.emailFocusNode.value,
-                    obscureText: true,
-                    obscuringCharacter: "*",
-                    decoration: InputDecoration(
-                        hintText: 'password_hint'.tr,
-                        border: OutlineInputBorder()),
-
-
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        Utils.sanckBar("Password", "Enter password");
-                      }
-                    },
-
-                    onFieldSubmitted: (value) {},
-
-                  ),
+                  InputPasswordWidget()   //* <-- Call This InputPasswordWidget
 
 
 
@@ -110,16 +80,7 @@ class _LoginViewState extends State<LoginView> {
               height: 40,
             ),
 
-           Obx(() =>  RoundButton(      //* <-- Call RoundButton
-                white: 200,
-                title: 'login'.tr,
-                loading: loginViewController.loading.value,
-                onPress: () {
-                  if (_formkey.currentState!.validate()) {
-                     loginViewController.loginApi();
-                  }
-                })
-          )
+            LoginButtonWidget(formkey: _formkey,)    //* <-- Call This LoginButtonWidget
            
 
 
